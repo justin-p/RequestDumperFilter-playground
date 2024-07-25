@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web:
+    image: tomcat:8.5.15
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./servlet-auth/target/servlet-auth.war:/usr/local/tomcat/webapps/servlet-auth.war
+      - ./conf/web.xml:/usr/local/tomcat/conf/web.xml
+      - ./conf/logging.properties:/usr/local/tomcat/conf/logging.properties
+      - ./logs:/usr/local/tomcat/logs
